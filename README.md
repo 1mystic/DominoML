@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="app/public/favicon.svg" alt="DominoML Logo" width="80" height="80">
+
   
   # DominoML
   
