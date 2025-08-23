@@ -7,6 +7,7 @@ export interface MLNode {
   data: {
     label: string;
     description: string;
+    type: string;
     parameters?: Record<string, unknown>;
     inputs?: string[];
     outputs?: string[];

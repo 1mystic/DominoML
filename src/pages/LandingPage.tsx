@@ -7,15 +7,11 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { UserProfile } from '@/components/UserProfile';
 import { 
   Palette, 
-  Zap, 
   Cloud, 
   Code, 
-  Users, 
-  Star,
   ArrowRight,
   Play,
   UserPlus,
-  CheckCircle,
   Sparkles,
   Brain,
   GitBranch,

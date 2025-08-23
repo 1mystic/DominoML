@@ -9,7 +9,7 @@ import {
   signInWithPopup,
   updateProfile
 } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { auth, hasFirebaseConfig } from '@/lib/firebase';
 import { toast } from 'sonner';
 
 interface AuthContextType {
@@ -40,6 +40,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(true);
 
   const signup = async (email: string, password: string, displayName?: string) => {
+    if (!hasFirebaseConfig || !auth) {
+      toast.error('Authentication is not available in demo mode');
+      return;
+    }
+    
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password);
       if (displayName && result.user) {
@@ -54,6 +59,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   const login = async (email: string, password: string) => {
+    if (!hasFirebaseConfig || !auth) {
+      toast.error('Authentication is not available in demo mode');
+      return;
+    }
+    
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success('Logged in successfully!');
@@ -65,6 +75,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   const loginWithGoogle = async () => {
+    if (!hasFirebaseConfig || !auth) {
+      toast.error('Authentication is not available in demo mode');
+      return;
+    }
+    
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
@@ -77,6 +92,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   const logout = async () => {
+    if (!hasFirebaseConfig || !auth) {
+      toast.error('Authentication is not available in demo mode');
+      return;
+    }
+    
     try {
       await signOut(auth);
       toast.success('Logged out successfully!');
@@ -88,6 +108,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   useEffect(() => {
+    if (!hasFirebaseConfig || !auth) {
+      // In demo mode without Firebase, just set loading to false
+      setLoading(false);
+      return;
+    }
+    
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);

@@ -10,7 +10,7 @@ import {
   orderBy, 
   serverTimestamp 
 } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { db, hasFirebaseConfig } from '@/lib/firebase';
 import { SavedModel, MLNode, MLEdge } from '@/types/ml-types';
 
 const MODELS_COLLECTION = 'savedModels';
@@ -23,6 +23,10 @@ export const saveModelToFirebase = async (
   description?: string,
   tags?: string[]
 ): Promise<string> => {
+  if (!hasFirebaseConfig || !db) {
+    throw new Error('Database is not available in demo mode');
+  }
+  
   try {
     const modelData = {
       name,
@@ -52,6 +56,10 @@ export const updateModelInFirebase = async (
   description?: string,
   tags?: string[]
 ): Promise<void> => {
+  if (!hasFirebaseConfig || !db) {
+    throw new Error('Database is not available in demo mode');
+  }
+  
   try {
     const modelRef = doc(db, MODELS_COLLECTION, modelId);
     await updateDoc(modelRef, {
@@ -69,6 +77,10 @@ export const updateModelInFirebase = async (
 };
 
 export const deleteModelFromFirebase = async (modelId: string): Promise<void> => {
+  if (!hasFirebaseConfig || !db) {
+    throw new Error('Database is not available in demo mode');
+  }
+  
   try {
     const modelRef = doc(db, MODELS_COLLECTION, modelId);
     await deleteDoc(modelRef);
@@ -79,6 +91,11 @@ export const deleteModelFromFirebase = async (modelId: string): Promise<void> =>
 };
 
 export const getUserModelsFromFirebase = async (userId: string): Promise<SavedModel[]> => {
+  if (!hasFirebaseConfig || !db) {
+    // Return empty array in demo mode
+    return [];
+  }
+  
   try {
     const q = query(
       collection(db, MODELS_COLLECTION),
@@ -107,6 +124,11 @@ export const getUserModelsFromFirebase = async (userId: string): Promise<SavedMo
 };
 
 export const getPublicModelsFromFirebase = async (): Promise<SavedModel[]> => {
+  if (!hasFirebaseConfig || !db) {
+    // Return empty array in demo mode
+    return [];
+  }
+  
   try {
     const q = query(
       collection(db, MODELS_COLLECTION),
