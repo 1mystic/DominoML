@@ -78,18 +78,17 @@ const LandingPage = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <Palette className="h-5 w-5 text-white" />
+                <img src="logo.webp" alt="GlideML Logo" className="h-5 w-5 text-white" />
               </div>
               <div className="flex items-center gap-2">
                 <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                  DominoML
+                  GlideML
                 </h1>
                 <Badge variant="secondary" className="text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border-0">
                   Beta
                 </Badge>
               </div>
             </div>
-            
             <div className="flex items-center gap-3">
               <ThemeToggle />
               {currentUser && <UserProfile />}
@@ -172,8 +171,8 @@ const LandingPage = () => {
                 {/* Hero Image */}
                 <div className="relative p-2">
                   <img 
-                    src="/hero.jpg" 
-                    alt="DominoML Visual ML Pipeline Builder Interface"
+                    src="/hero.webp" 
+                    alt="GlideML Visual ML Pipeline Builder Interface"
                     className="w-full h-auto object-cover rounded-2xl"
                   />
                 </div>
@@ -270,15 +269,15 @@ const LandingPage = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-3 mb-6 md:mb-0">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Palette className="h-4 w-4 text-white" />
+                <img src="logo.webp" alt="GlideML Logo"  className="h-4 w-4 text-white" />
               </div>
               <span className="font-semibold text-slate-900 dark:text-slate-100 text-lg">
-                DominoML
+                GlideML
               </span>
             </div>
             
             <div className="text-sm text-slate-600 dark:text-slate-400">
-              © 2025 DominoML. Built with ❤️ for the ML community.
+              © 2025 GlideML. Built with ❤️ for the ML community.
             </div>
           </div>
         </div>

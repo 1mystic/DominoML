@@ -197,9 +197,9 @@ const MLModelBuilder = () => {
                 </Button>
                 
                 <div className="flex items-center gap-2 flex-shrink-0">
-                  <Palette className="w-5 h-5 lg:w-6 lg:h-6 text-blue-600" />
+                 <img src="logo.webp" alt="GlideML Logo"  className="w-5 h-5 lg:w-6 lg:h-6 text-blue-600" />
                   <h1 className="text-lg lg:text-xl font-bold text-gray-900 dark:text-gray-100">
-                    ML Model Builder
+                    GlideML
                   </h1>
                 </div>
               </div>
