@@ -1,8 +1,12 @@
 # GlideML - ML Model Builder Tool
 
 A modern, drag-and-drop machine learning pipeline builder with Firebase authentication, dark theme support, and comprehensive model management features.
-
-[![Atharv Khare's Portfolio](/snips/home.png)](https://glideml.vercel.app/)
+<p align="center">
+   <a href="https://glideml.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/View%20Live%20Site-GlideML-blueviolet?style=for-the-badge&logo=vercel" alt="View Live Site" />
+   </a>
+</p>
+[![GlideML](/snips/home.png)](https://glideml.vercel.app/)
 
 ## ✨ Features
 
