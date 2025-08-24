@@ -2,7 +2,7 @@
 
 A modern, drag-and-drop machine learning pipeline builder with Firebase authentication, dark theme support, and comprehensive model management features.
 
-[![Atharv Khare's Portfolio](https://og-playground.vercel.app/api/image?....)](https://glideml.vercel.app/)
+[![Atharv Khare's Portfolio](/snips/home.png)](https://glideml.vercel.app/)
 
 ## ✨ Features
 
